@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="header.jsp" %>
+	<h3>파일 업로드</h3>
+	
+	<form method="POST" enctype="multipart/form-data">
+		<p><input type="file" name="file"></p>
+		<p><input type="submit"></p>
+	</form>
+</body>
+</html>
