@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+/* header style */
+header {
+	border: 1px solid black;
+	
+	height: 150px;
+	
+	display: flex;
+	flex-direction: column;
+}
+.headerTop {
+	flex: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	font-size: 30px;
+	font-weight: bold;
+}
+.headerTop span {
+	height: 50px;
+}
+.headerBottom {
+	flex: 1;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.headerBottom a {
+	all: unset;
+	cursor: pointer;
+	
+	margin: 0px 50px 0px 50px;
+	
+	font-size: 20px;
+	font-weight: bold;
+}
+.headerBottom a:hover {
+	border-bottom: 2px solid black;
+}
+
+/* main style */
+.main {
+	width: 900px;
+	padding-top: 50px;
+	margin: auto;
+}
+
+/* table style */
+.main table {
+	width: 800px;
+	margin: auto;
+	
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+th {
+	background-color: silver;
+}
+td, th {
+	border: 1px solid black;
+	height: 50px;
+	text-align: center;
+}
+table a {
+	all: unset;
+	cursor: pointer;
+}
+
+table a:hover {
+	border-bottom: 1px solid black;
+}
+
+/* form style */
+fieldset form {
+	width: 800px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+fieldset input{
+	width: 600px;
+	height: 50px;
+	margin: 5px;
+}
+fieldset textarea {
+	width: 600px;
+	height: 300px;
+	margin: 5px;
+	resize: none;
+}
+fieldset input[type="submit"] {
+	width: 610px;
+	height: 50px;
+}
+
+/* view style */
+.view {
+	border: 1px solid black;
+	width: 800px;
+	margin: auto;
+}
+.viewTitle {
+	padding: 15px;
+	
+	font-size: 20px;
+	font-weight: bold;
+}
+.date {
+	border-bottom: 1px dashed gray;
+
+	padding: 5px 5px 10px 5px;
+
+	text-align: right;
+}
+.view textarea {
+	border: 0px;
+	
+	width: 785px;
+	height: 500px;
+	margin: 5px 0px 0px 5px;
+	resize: none;
+	
+	font-size: 18px;
+}
+.main p {
+	width: 800px;
+	margin: auto;
+	
+	display: flex;
+	justify-content: flex-end;
+}
+.main > p > button {
+	all: unset;
+	cursor: pointer;
+	
+	margin: 10px;
+	padding: 10px 20px;
+	
+	background-color: gray;
+	color: #eee;
+}
+.password {
+	width: 200px;
+	height: 35px;
+	margin: 10px;
+}
+
+/* search style */
+.searchBar {
+	width: 800px;
+	margin: auto;
+	padding-bottom: 30px;
+	
+	display: flex;
+	justify-content: center;		
+}
+.searchBar input[type="search"] {
+	width: 300px;
+	height: 50px;
+}
+.searchBar input[type="submit"] {
+	width: 60px;
+	margin-left: 5px;
+	
+	background-color: gray;
+	color: #eee;
+}
+.search {
+	font-weight: bold;
+	color: skyblue;
+}
