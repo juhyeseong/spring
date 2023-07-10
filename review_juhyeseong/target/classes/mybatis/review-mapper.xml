@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	"-//mybatis.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itbank.repository.ReviewDAO">
+	<insert id="insert" parameterType="review">
+		insert into
+			review(name, writer, content, grade)
+			values(#{name}, #{writer}, #{content}, #{grade})
+	</insert>
+	
+	<insert id="uploadFile" parameterType="hashmap">
+		insert into
+			review_upload(filePath, review)
+			<foreach item="item" collection="filePath" separator=" union all ">
+				select #{item}, #{review} from dual
+			</foreach>
+	</insert>
+	
+	<select id="selectMaxIdx" resultType="int">
+		select max(idx) from review
+	</select>
+	
+	<select id="selectAll" resultType="review">
+		select
+			M.userNick as writerNick,
+			R.*
+			from review R
+			join review_member M
+				on R.writer = M.idx
+			order by R.idx desc
+	</select>
+	
+	<select id="selectOne" parameterType="int" resultType="review">
+		select
+		    M.userNick as writerNick,
+		    R.*
+		    from review R
+		    join review_member M
+		        on R.writer = M.idx
+		    where R.idx=#{idx}
+	</select>
+	
+	<select id="selectFiles" parameterType="int" resultType="string">
+		select filePath from review_upload where review=#{idx} order by idx
+	</select>
+	
+	<update id="update" parameterType="review">
+		update review set
+			name=#{name},
+			content=#{content},
+			grade=#{grade}
+			where idx=#{idx}
+	</update>
+	
+	<delete id="deleteFile" parameterType="int">
+		delete review_upload where review=#{idx}
+	</delete>
+	
+	<delete id="delete" parameterType="int">
+		delete review where idx=#{idx}
+	</delete>
+	
+	<select id="select" parameterType="string" resultType="review">
+		select
+			M.userNick as writerNick,
+			R.*
+			from review R
+			join review_member M
+				on R.writer = M.idx
+			where name like '%${search}%' 
+			order by R.idx desc
+	</select>
+</mapper>
