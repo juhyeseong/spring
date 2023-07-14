@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+a {
+	all: unset;
+	cursor: pointer;
+}
+
+/* header style */
+header {
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	
+	background-color: gray;
+	color: #eee;
+	
+	font-weight: bold;
+}
+.project {
+	flex: 1;
+	
+	width: 200px;
+	margin: auto;
+	
+	display: flex;
+	justify-content: center;
+}
+.project a {
+	margin: auto;
+	
+	font-size: 30px;
+	text-align: center;
+}
+.headerList {
+	flex: 1;
+}
+.headerList ul {
+	list-style: none;
+	
+	height: 75px;
+	padding: 0px;
+	margin: auto;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	font-size: 20px;
+}
+.headerList li {
+	margin: 0px 80px;
+}
+
+/* main style */
+.main {
+	width: 900px;
+	margin: 50px auto;
+}
+
+/* table style */
+table {
+	border: 2px solid black;
+	border-collapse: collapse;
+	width: 800px;
+	margin: auto;
+}
+table > thead > tr {
+	background-color: gray;
+	color: white;
+}
+
+td, th {
+	padding: 5px 10px;
+	border-bottom: 1px solid gray;
+	text-align: center;
+	
+	height: 40px;
+}
+tbody > tr:hover {
+	background-color: silver;
+}
+
+/* form style */
+fieldset {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+legend {
+	font-size: 18px;
+}
+fieldset input {
+	width: 500px;
+	height: 50px;
+}
+fieldset input[type="submit"] {
+	border: 0px;
+	
+	width: 510px;
+	height: 50px;
+	
+	background-color: gray;
+	color: #eee;
+	font-size: 18px;
+	font-weight: bold;
+}
+fieldset textarea {
+	width: 500px;
+	height: 300px;
+	resize: none;
+}
+fieldset input[type="file"] {
+	width: 500px;
+	height: 25px;
+}
+
+/* view style */
+.view {
+	border: 1px solid black;
+	width: 800px;
+	margin: auto;
+}
+.viewName {
+	padding: 15px;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	font-size: 20px;
+	font-weight: bold;
+}
+.writeDate {
+	border-bottom: 1px dashed gray;
+
+	padding: 5px 5px 10px 5px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.writeDate div {
+	padding: 0px 10px;
+}
+.view textarea {
+	width: 785px;
+	height: 500px;
+	margin: 5px 0px 0px 5px;
+	resize: none;
+	
+	font-size: 18px;
+}
+.image {
+	width: 800px;
+	margin: 10px auto;
+	
+	display: flex;
+	flex-wrap: wrap;
+}
+.image img {
+	width: 245px;
+	height: 245px;
+	margin: 10px;
+}
